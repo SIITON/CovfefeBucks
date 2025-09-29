@@ -1,5 +1,8 @@
 ﻿namespace CovfefeBucks.Core.Models;
 
+/// <summary>
+/// Represents a coffee order made by a customer
+/// </summary>
 public class CoffeeOrder
 {
     public int Id { get; set; }

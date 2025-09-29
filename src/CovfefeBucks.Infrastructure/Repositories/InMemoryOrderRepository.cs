@@ -8,20 +8,22 @@ namespace CovfefeBucks.Infrastructure.Repositories;
 public class InMemoryOrderRepository : IOrderRepository
 {
     private readonly ConcurrentDictionary<int, CoffeeOrderResponseModel> _orders = new();
-    public void Add(CoffeeOrder order)
+    public Task Add(CoffeeOrder order)
     {
         var orderToSave = ToResponseModel(order);
         _orders[orderToSave.Id] = orderToSave;
+        return Task.CompletedTask;
     }
 
-    public CoffeeOrder Get(int id)
+    public Task<CoffeeOrder> Get(int id)
     {
-        return _orders[id].ToDomain();
+        return Task.FromResult(_orders[id].ToDomain());
     }
 
-    public IEnumerable<CoffeeOrder> GetAll()
+    public Task<IEnumerable<CoffeeOrder>> GetAll()
     {
-        return _orders.Values.Select(o => o.ToDomain()).ToList();
+        var orders = _orders.Values.Select(o => o.ToDomain()).ToList();
+        return Task.FromResult<IEnumerable<CoffeeOrder>>(orders);
     }
     
     internal static CoffeeOrderResponseModel ToResponseModel(CoffeeOrder order) => new()
