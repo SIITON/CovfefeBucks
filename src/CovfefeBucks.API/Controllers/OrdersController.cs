@@ -16,7 +16,7 @@ public class OrdersController(IOrderService order) : ControllerBase
     }
 
     [HttpGet("id")]
-    public async Task<IActionResult> GetOrder(int id)
+    public async Task<IActionResult> GetOrder(string id)
     {
         var result = await Task.FromResult(order.Get(id));
         return Ok(result);
@@ -26,6 +26,6 @@ public class OrdersController(IOrderService order) : ControllerBase
     public async Task<IActionResult> CreateOrder([FromBody] CoffeeOrderDto newOrder)
     {
         await Task.Run(() => order.Add(newOrder));
-        return CreatedAtAction(nameof(GetOrder), new { id = newOrder.Id }, newOrder);
+        return NoContent();
     }
 }

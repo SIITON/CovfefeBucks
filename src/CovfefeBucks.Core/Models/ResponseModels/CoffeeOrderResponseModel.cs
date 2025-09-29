@@ -5,13 +5,13 @@
 /// </summary>
 public class CoffeeOrderResponseModel
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = string.Empty;
     public string Customer { get; set; } = string.Empty;
     public IList<Coffee> Coffee { get; set; } = [];
 
     public CoffeeOrder ToDomain() => new()
     {
-        Id = Id,
+        Id = Guid.TryParse(Id, out var g) ? g : Guid.NewGuid(),
         Customer = Customer,
         Coffee = Coffee
     };

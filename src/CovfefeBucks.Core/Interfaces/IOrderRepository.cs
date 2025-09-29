@@ -16,7 +16,7 @@ public interface IOrderRepository
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    Task<CoffeeOrder> Get(int id);
+    Task<CoffeeOrder> Get(Guid id);
 
     /// <summary>
     /// Fetches all orders from the repository

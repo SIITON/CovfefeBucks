@@ -5,7 +5,7 @@
 /// </summary>
 public class CoffeeOrder
 {
-    public int Id { get; set; }
+    public Guid Id { get; init; } = Guid.NewGuid(); // Ensure there is always an id
     public string Customer { get; set; } = string.Empty;
     public IList<Coffee> Coffee { get; set; } = [];
 }

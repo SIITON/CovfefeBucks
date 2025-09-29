@@ -1,8 +1,12 @@
 ﻿namespace CovfefeBucks.Core.Models.ApiModels;
 
-// output
+/// <summary>
+/// Output model for a coffee order
+/// </summary>
 public class OrderApiModel
 {
+    public string Id { get; set; }
+    public string Customer { get; set; } = string.Empty;
     public IEnumerable<CoffeeApiModel> Coffee { get; set; } = [];
 }
 public class CoffeeApiModel
@@ -15,12 +19,14 @@ public class CoffeeApiModel
     public string MilkType { get; set; } = string.Empty;
 }
 
-// input
+/// <summary>
+/// Input model for creating a coffee order,
+/// notice that it does not contain an id.
+/// </summary>
 public class CoffeeOrderDto
 {
-    public int Id { get; set; }
     public string Customer { get; set; } = string.Empty;
-    public IList<CoffeeOrderDetailsDto> Coffee { get; set; } = [];
+    public IList<CoffeeOrderDetailsDto> CoffeeDetails { get; set; } = [];
 }
 
 public class CoffeeOrderDetailsDto

@@ -1,8 +1,8 @@
 using CovfefeBucks.Application.Mappers;
 using CovfefeBucks.Application.Services;
 using CovfefeBucks.Core.Interfaces;
-using CovfefeBucks.Core.Models.Dtos;
 using CovfefeBucks.Core.Models;
+using CovfefeBucks.Core.Models.ApiModels;
 using CovfefeBucks.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
