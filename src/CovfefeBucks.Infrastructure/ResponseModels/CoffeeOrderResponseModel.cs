@@ -1,4 +1,6 @@
-﻿namespace CovfefeBucks.Core.Models.ResponseModels;
+﻿using CovfefeBucks.Core.Models;
+
+namespace CovfefeBucks.Infrastructure.ResponseModels;
 
 /// <summary>
 /// Database representation of a coffee order

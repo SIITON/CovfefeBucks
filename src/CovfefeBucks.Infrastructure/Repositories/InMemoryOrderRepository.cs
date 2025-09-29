@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using CovfefeBucks.Core.Interfaces;
 using CovfefeBucks.Core.Models;
-using CovfefeBucks.Core.Models.ResponseModels;
+using CovfefeBucks.Infrastructure.ResponseModels;
 
 namespace CovfefeBucks.Infrastructure.Repositories;
 
